@@ -1,7 +1,8 @@
-#Importing the GoogleTranslator frmo the deep_translator library
+#Importing the GoogleTranslator from the deep_translator library
 from deep_translator import GoogleTranslator
 
 from tkinter import *
+
 
 class ConversionWindow:
     def __init__(self):
@@ -31,7 +32,6 @@ class ConversionWindow:
 
         # Creating an entry where the users types the language to be translated to
         self.language = Entry(self.frame, font=('Times New Roman', 18), width=30)
-        # self.language.bind("<KeyPress>", self.altrun)
         # Placing the entry in the grid layout of self.frame at row 1 and letting it the span 3 columns 
         # starting from column 0
         self.language.grid(row=1, column=0, columnspan=3, sticky=E+W, pady=10)
@@ -56,7 +56,7 @@ class ConversionWindow:
         # the GoogleTranslatpr API and storing the dictionary in a variable named language_dict
         language_dict = GoogleTranslator().get_supported_languages(as_dict=True)
 
-        # Removing any whitesapce on the left and right of teh language to be converted and converting the text 
+        # Removing any whitesapce on the left and right of the language to be converted and converting the text 
         # to be converted to lowercase so that is can match the keys in the dictionary
         translate_to = translate_to.strip()
         translate_to = translate_to.lower()
@@ -85,3 +85,5 @@ class ConversionWindow:
        
 
 ConversionWindow()
+
+
